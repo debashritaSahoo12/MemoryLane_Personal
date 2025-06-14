@@ -277,22 +277,22 @@ button:hover::after {
 @media (max-width: 768px) {
   .main-container {
     flex-direction: column;
-    max-width: 320px;
-    min-height: 600px;
+    min-height: auto;
+    margin: 1rem;
   }
 
   .left-panel,
   .right-panel {
     width: 100%;
-    text-align: center;
   }
 
   .left-panel {
-    padding: 20px 15px;
+    padding: 2rem 1.5rem;
+    text-align: center;
   }
 
   .right-panel {
-    padding: 30px 15px;
+    padding: 2rem 1.5rem;
   }
 
   .form-container {
@@ -300,7 +300,7 @@ button:hover::after {
   }
 
   .left-panel h2 {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   .left-panel p {
@@ -315,7 +315,6 @@ button:hover::after {
   input[type="password"] {
     padding: 10px;
     font-size: 14px;
-    margin-bottom: 15px;
   }
 
   button {
@@ -324,10 +323,98 @@ button:hover::after {
   }
 
   .theme-toggle {
+    top: 5px;
+    right: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .main-container {
+    margin: 0.5rem;
+  }
+
+  .left-panel {
+    padding: 1.5rem 1rem;
+  }
+
+  .right-panel {
+    padding: 1.5rem 1rem;
+  }
+
+  .form-container {
+    min-height: 300px;
+  }
+
+  .left-panel h2 {
+    font-size: 20px;
+  }
+
+  .left-panel p {
+    font-size: 13px;
+  }
+
+  .form-container h2 {
+    font-size: 18px;
+  }
+
+  input[type="email"],
+  input[type="password"] {
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  button {
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  .toggle-link {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 320px) {
+  .left-panel {
+    padding: 1rem;
+  }
+
+  .right-panel {
+    padding: 1rem;
+  }
+
+  .form-container {
+    min-height: 250px;
+  }
+
+  .left-panel h2 {
+    font-size: 18px;
+  }
+
+  .left-panel p {
     font-size: 12px;
-    padding: 4px;
-    width: 24px;
-    height: 24px;
+  }
+
+  .form-container h2 {
+    font-size: 16px;
+  }
+
+  input[type="email"],
+  input[type="password"] {
+    padding: 6px;
+    font-size: 12px;
+  }
+
+  button {
+    padding: 6px;
+    font-size: 12px;
+  }
+
+  .toggle-link {
+    font-size: 12px;
   }
 }
 
