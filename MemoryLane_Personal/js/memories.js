@@ -352,17 +352,21 @@ function checkMilestoneDates() {
     if (!memory.isMilestone) return false;
     const memoryDate = new Date(memory.createdAt);
     const memoryDateString = memoryDate.toISOString().split("T")[0];
-    
+
     // Check for either exact date match or same month/day
-    return memoryDateString === todayString || 
-           (memoryDate.getMonth() === today.getMonth() && 
-            memoryDate.getDate() === today.getDate());
+    return (
+      memoryDateString === todayString ||
+      (memoryDate.getMonth() === today.getMonth() &&
+        memoryDate.getDate() === today.getDate())
+    );
   });
 
   if (milestoneMemories.length > 0) {
     // Remove any existing milestone notifications
-    const existingNotifications = document.querySelectorAll('.milestone-notification');
-    existingNotifications.forEach(notification => notification.remove());
+    const existingNotifications = document.querySelectorAll(
+      ".milestone-notification"
+    );
+    existingNotifications.forEach((notification) => notification.remove());
 
     // Create a single notification for all milestones
     const notification = document.createElement("div");
@@ -373,7 +377,8 @@ function checkMilestoneDates() {
         <div class="milestone-list">
           ${milestoneMemories
             .map((memory) => {
-              const yearsAgo = today.getFullYear() - new Date(memory.createdAt).getFullYear();
+              const yearsAgo =
+                today.getFullYear() - new Date(memory.createdAt).getFullYear();
               return `
                 <div class="milestone-item">
                   <strong>${memory.title}</strong>
